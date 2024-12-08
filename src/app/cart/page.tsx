@@ -38,7 +38,7 @@ const Cart = () => {
     const discountPercentage = 20;
     const deliveryFee = 15;
 
-    const handleQuantityChange = (id, type) => {
+    const handleQuantityChange = (id:number, type:string) => {
         setCartItems((prev) =>
             prev.map((item) =>
                 item.id === id
@@ -51,7 +51,7 @@ const Cart = () => {
         );
     };
 
-    const handleRemoveItem = (id) => {
+    const handleRemoveItem = (id : number) => {
         setCartItems((prev) => prev.filter((item) => item.id !== id));
     };
 
