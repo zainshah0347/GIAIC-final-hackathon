@@ -9,8 +9,8 @@ export default function Home() {
    <div>
     <HeroSection/>
     <NewArrival heading="New Arrivals"/>
-    <Category/>
     <NewArrival heading="Top Selling"/>
+    <Category/>
     <ActionAreaCard/>
    </div>
   );
