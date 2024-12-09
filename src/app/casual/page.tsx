@@ -1,4 +1,5 @@
 import NewArrival from "../components/NewArrival";
+import casual from '@/images/casual.png'
 import Image from 'next/image';
 
 export default function Casual() {
@@ -6,8 +7,8 @@ export default function Casual() {
         <div className='flex w-full justify-center'>
             <div className='border-2 flex'>
                 <div className='w-[250px] h-full'>
-                    <img 
-                        src='/images/casual.png'
+                    <Image
+                        src={casual}
                         // width={250} 
                         // height={600} 
                         alt='casual'

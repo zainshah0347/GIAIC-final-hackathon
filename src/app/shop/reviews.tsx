@@ -1,9 +1,7 @@
 import branch from '@/images/branch.png'
 import Image from 'next/image'
-import ActionAreaCard from '../components/HappyCustomer'
 import HalfRating from '../components/NewArrival/RatingStar'
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
-import NewArrival from '../components/NewArrival';
 
 export default function Reviews() {
 
@@ -50,9 +48,9 @@ export default function Reviews() {
                         cardData.map((items, index) => {
                             const { name, p1, p2, p3, p4 } = items;
                             return (
-                                <div className='flex flex-col gap-5'>
+                                <div className='flex flex-col gap-5' key={index} >
                                     <div className='flex'>
-                                        <div key={index} className='border-2 p-8 rounded-3xl flex flex-col'>
+                                        <div className='border-2 p-8 rounded-3xl flex flex-col'>
                                             <HalfRating stars={5} />
                                             <h1 className='text-2xl'>{name} <span><CheckCircleIcon className='text-[#01AB31]' /></span></h1>
                                             <p className='text-sm text-justify'>

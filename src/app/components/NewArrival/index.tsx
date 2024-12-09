@@ -15,17 +15,19 @@ import cardData from '@/db';
 interface Props {
     heading?: string;
 }
+
 export default function NewArrival({ heading }: Props) {
     return (
-        <div className="w-full flex justify-center overflow-hidden">
+        <div className="w-full flex justify-center overflow-hidden py-6">
             <div className="w-full max-w-7xl px-4">
                 <div>
-                    <h1 className="text-center text-5xl font-extrabold py-12">{heading}</h1>
+                    <h1 className="text-center text-3xl sm:text-4xl md:text-5xl font-extrabold py-12">{heading}</h1>
                 </div>
                 <div className="w-full">
                     <Swiper
-                        slidesPerView={4}
-                        spaceBetween={20}
+                        className=""
+                        slidesPerView={1}
+                        spaceBetween={10}
                         pagination={{
                             clickable: true,
                         }}
@@ -48,33 +50,69 @@ export default function NewArrival({ heading }: Props) {
                             },
                         }}
                         modules={[Pagination]}
+
+                        style={{ paddingBottom: '50px' }}
                     >
                         {cardData.map((items, index) => {
-                            const { image, productName, rating, discountPrice, retailPrice, discount } = items;
+                            const { image, productName, discountPrice, retailPrice, discount } = items;
 
                             return (
-                                <SwiperSlide key={index}>
-                                    <div className="flex flex-col gap-4 p-4 bg-white shadow-lg rounded-lg">
-                                        <Image src={image} alt="product" width={295} height={295} className="rounded" />
-                                        <h1 className="font-bold text-lg">{productName}</h1>
-                                        <div>
-                                            <HalfRating stars={3} />
+                                <div key={index}>
+                                    <SwiperSlide className="">
+                                        <div className="flex flex-col gap-4 p-4 bg-white shadow-lg rounded-lg items-center">
+                                            <Image
+                                                src={image}
+                                                alt="product"
+                                                width={295}
+                                                height={295}
+                                                className="rounded max-w-full h-auto"
+                                            />
+                                            <h1 className="font-bold text-lg text-center">{productName}</h1>
+                                            <div className="flex justify-center">
+                                                <HalfRating stars={3.5} />
+                                            </div>
+                                            <p className="flex items-center justify-center gap-4 mt-2">
+                                                <span className="text-xl font-bold">{discountPrice}</span>
+                                                <span className="text-xl line-through text-gray-400">{retailPrice}</span>
+                                                <button className="bg-red-100 text-red-600 text-sm px-4 py-1 rounded-3xl">
+                                                    {discount}
+                                                </button>
+                                            </p>
                                         </div>
-                                        <p className="flex items-center gap-4">
-                                            <span className="text-xl font-bold">{discountPrice}</span>
-                                            <span className="text-xl line-through text-gray-400">{retailPrice}</span>
-                                            <button className="bg-red-100 text-red-600 text-sm px-4 py-1 rounded-3xl">
-                                                {discount}
-                                            </button>
-                                        </p>
-                                    </div>
-                                </SwiperSlide>
+                                    </SwiperSlide>
+
+
+                                    <SwiperSlide key={index} className="">
+                                        <div className="flex flex-col gap-4 p-4 bg-white shadow-lg rounded-lg items-center">
+                                            <Image
+                                                src={image}
+                                                alt="product"
+                                                width={295}
+                                                height={295}
+                                                className="rounded max-w-full h-auto"
+                                            />
+                                            <h1 className="font-bold text-lg text-center">{productName}</h1>
+                                            <div className="flex justify-center">
+                                                <HalfRating stars={3.5} />
+                                            </div>
+                                            <p className="flex items-center justify-center gap-4 mt-2">
+                                                <span className="text-xl font-bold">{discountPrice}</span>
+                                                <span className="text-xl line-through text-gray-400">{retailPrice}</span>
+                                                <button className="bg-red-100 text-red-600 text-sm px-4 py-1 rounded-3xl">
+                                                    {discount}
+                                                </button>
+                                            </p>
+                                        </div>
+                                    </SwiperSlide>
+                                </div>
                             );
                         })}
                     </Swiper>
                 </div>
                 <div className="flex justify-center items-center py-10">
-                    <button className="px-14 py-2 border-2 border-black rounded-3xl">View All</button>
+                    <button className="px-8 sm:px-12 md:px-14 py-2 border-2 border-black rounded-3xl text-sm sm:text-base">
+                        View All
+                    </button>
                 </div>
             </div>
         </div>

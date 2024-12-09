@@ -60,7 +60,7 @@ const Cart = () => {
     const total = subtotal - discount + deliveryFee;
 
     return (
-        <div className="w-[80%] mx-auto flex flex-col lg:flex-row lg:justify-between lg:gap-8 py-8">
+        <div className="lg:w-[80%] w-[90%] mx-auto flex flex-col lg:flex-row lg:justify-between lg:gap-8 py-8">
             {/* Cart Items Section */}
             <div className="flex-1 bg-white shadow-lg rounded-lg p-6">
                 <h1 className="text-2xl font-bold mb-6">Your Cart</h1>

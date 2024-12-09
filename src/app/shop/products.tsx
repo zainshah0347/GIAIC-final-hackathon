@@ -174,7 +174,7 @@ export default function Products() {
                 className="mySwiper"
             >
                 {cardData.map((items, index) => {
-                    const { image, productName, rating, ratingInNumber, discountPrice, retailPrice, discount } = items;
+                    const { image, productName, discountPrice, retailPrice, discount } = items;
 
                     return (
                         <SwiperSlide key={index}>
