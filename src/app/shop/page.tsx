@@ -20,8 +20,8 @@ export default function Shop() {
                 </div>
 
                 <div className='flex flex-wrap py-14 gap-y-4'>
-                    <div className='border-2 flex flex-wrap-reverse lg:w-[60%] w-full gap-y-4'>
-                        <div className='flex lg:flex-col justify-between border-2 lg:w-[30%] w-full'>
+                    <div className='flex flex-wrap-reverse lg:w-[60%] w-full gap-y-4'>
+                        <div className='flex lg:flex-col justify-between lg:w-[30%] w-full'>
                             <div><Image src={detail1} alt='details' className='w-auto'/></div>
                             <div><Image src={detail3} alt='details' className='w-auto'/></div>
                             <div><Image src={detail4} alt='details' className='w-auto'/></div>

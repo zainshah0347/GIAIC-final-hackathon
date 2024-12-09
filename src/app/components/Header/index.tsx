@@ -178,6 +178,7 @@ import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined
 import ClearOutlinedIcon from '@mui/icons-material/ClearOutlined';
 
 import LeftDrawer from '../leftDrawer';
+import Link from 'next/link';
 
 export default function Header() {
     const [open, setOpen] = React.useState(false);
@@ -189,7 +190,7 @@ export default function Header() {
     return (
         <div className='flex justify-center items-center text-[#404040] flex-col'>
             {/* Sign Up Bar */}
-            <div className='w-full sm:w-[80%] flex items-center justify-between bg-black p-2 text-white'>
+            <div className='w-full flex items-center justify-between bg-black p-2 text-white'>
                 <h1 className='text-xs sm:text-sm md:text-base'>
                     Sign up and get 20% off to your first order. <span className='underline cursor-pointer'>Sign Up Now</span>
                 </h1>
@@ -208,9 +209,9 @@ export default function Header() {
                     <div className='w-full sm:w-auto'>
                         <ul className='flex flex-col sm:flex-row justify-between gap-4 sm:gap-6 p-2 sm:px-4'>
                             <li className='text-sm sm:text-base'>
-                                <a href='/shop' className='flex items-center'>
-                                    Shop <KeyboardArrowDownOutlinedIcon />
-                                </a>
+                            <a href='/shop' className='flex items-center'>
+                                Shop <KeyboardArrowDownOutlinedIcon />
+                            </a>
                             </li>
                             <li className='text-sm sm:text-base'>On Sale</li>
                             <li className='text-sm sm:text-base'>New Arrivals</li>
@@ -227,7 +228,7 @@ export default function Header() {
 
                 {/* Logo */}
                 <div>
-                    <h1 className='text-2xl font-extrabold text-black sm:text-3xl'>SHOP.CO</h1>
+                    <Link href='/'><h1 className='text-2xl font-extrabold text-black sm:text-3xl'>SHOP.CO</h1></Link>
                 </div>
 
 
@@ -266,7 +267,7 @@ export default function Header() {
                 <div className='w-full sm:w-auto'>
                     <ul className='flex gap-4 sm:gap-10 p-2 px-2 text-black'>
                         <li className='text-lg'>
-                            <ShoppingCartOutlinedIcon />
+                            <Link href='/cart'><ShoppingCartOutlinedIcon /></Link>
                         </li>
                         <li className='text-lg'>
                             <AccountCircleOutlinedIcon />

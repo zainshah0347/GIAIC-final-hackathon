@@ -82,7 +82,7 @@ const cardData = [
     },
     {
         image: '/images/product10.png',
-        productName: 'SUNGLASSES WITH UV PROTECTION',
+        productName: 'SUNGLASSES PROTECTION',
         rating: '/images/rating5.png',
         ratingInNumber: '4.6/5',
         discountPrice: '$700',
@@ -118,7 +118,7 @@ const cardData = [
     },
     {
         image: '/images/product14.png',
-        productName: 'BACKPACK WITH MULTI-COMPARTMENT',
+        productName: 'BACKPACK MULTI-COMPARTMENT',
         rating: '/images/rating4.png',
         ratingInNumber: '4.6/5',
         discountPrice: '$1800',
@@ -127,7 +127,7 @@ const cardData = [
     },
     {
         image: '/images/product15.png',
-        productName: 'WATERPROOF DIGITAL WATCH',
+        productName: 'WATERPROOF WATCH',
         rating: '/images/rating5.png',
         ratingInNumber: '4.9/5',
         discountPrice: '$2500',

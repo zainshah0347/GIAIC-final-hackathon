@@ -6,7 +6,7 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 
 // Import required modules
-import { Pagination } from 'swiper/modules';
+import { Pagination ,Autoplay} from 'swiper/modules';
 
 import Image from 'next/image';
 import HalfRating from './RatingStar';
@@ -19,7 +19,7 @@ interface Props {
 export default function NewArrival({ heading }: Props) {
     return (
         <div className="w-full flex justify-center overflow-hidden py-6">
-            <div className="w-full max-w-7xl px-4">
+            <div className="w-full max-w-7xl">
                 <div>
                     <h1 className="text-center text-3xl sm:text-4xl md:text-5xl font-extrabold py-12">{heading}</h1>
                 </div>
@@ -49,7 +49,8 @@ export default function NewArrival({ heading }: Props) {
                                 spaceBetween: 20,
                             },
                         }}
-                        modules={[Pagination]}
+                        modules={[Pagination,Autoplay]}
+                        autoplay={true}
 
                         style={{ paddingBottom: '50px' }}
                     >
@@ -59,7 +60,7 @@ export default function NewArrival({ heading }: Props) {
                             return (
                                 <div key={index}>
                                     <SwiperSlide className="">
-                                        <div className="flex flex-col gap-4 p-4 bg-white shadow-lg rounded-lg items-center">
+                                        <div className="flex flex-col gap-4 py-4 bg-white shadow-lg rounded-lg">
                                             <Image
                                                 src={image}
                                                 alt="product"
@@ -67,35 +68,11 @@ export default function NewArrival({ heading }: Props) {
                                                 height={295}
                                                 className="rounded max-w-full h-auto"
                                             />
-                                            <h1 className="font-bold text-lg text-center">{productName}</h1>
-                                            <div className="flex justify-center">
+                                            <h1 className="font-bold text-lg px-2">{productName}</h1>
+                                            <div className="flex">
                                                 <HalfRating stars={3.5} />
                                             </div>
-                                            <p className="flex items-center justify-center gap-4 mt-2">
-                                                <span className="text-xl font-bold">{discountPrice}</span>
-                                                <span className="text-xl line-through text-gray-400">{retailPrice}</span>
-                                                <button className="bg-red-100 text-red-600 text-sm px-4 py-1 rounded-3xl">
-                                                    {discount}
-                                                </button>
-                                            </p>
-                                        </div>
-                                    </SwiperSlide>
-
-
-                                    <SwiperSlide key={index} className="">
-                                        <div className="flex flex-col gap-4 p-4 bg-white shadow-lg rounded-lg items-center">
-                                            <Image
-                                                src={image}
-                                                alt="product"
-                                                width={295}
-                                                height={295}
-                                                className="rounded max-w-full h-auto"
-                                            />
-                                            <h1 className="font-bold text-lg text-center">{productName}</h1>
-                                            <div className="flex justify-center">
-                                                <HalfRating stars={3.5} />
-                                            </div>
-                                            <p className="flex items-center justify-center gap-4 mt-2">
+                                            <p className="flex items-center px-2 gap-4 mt-2">
                                                 <span className="text-xl font-bold">{discountPrice}</span>
                                                 <span className="text-xl line-through text-gray-400">{retailPrice}</span>
                                                 <button className="bg-red-100 text-red-600 text-sm px-4 py-1 rounded-3xl">
