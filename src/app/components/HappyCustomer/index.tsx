@@ -154,7 +154,7 @@ const cardData = [
 export default function ActionAreaCard() {
     return (
         <div className='py-10 px-2 flex justify-center'>
-            <div className='w-[95%] sm:w-[80%]'>
+            <div className='w-[90%] sm:w-[80%] lg:w-[80%]'>
                 <div>
                     <h1 className='text-4xl sm:text-5xl font-extrabold py-12 text-center'>
                         OUR HAPPY CUSTOMER

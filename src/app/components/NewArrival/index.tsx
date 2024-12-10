@@ -6,7 +6,7 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 
 // Import required modules
-import { Pagination ,Autoplay} from 'swiper/modules';
+import { Pagination, Autoplay } from 'swiper/modules';
 
 import Image from 'next/image';
 import HalfRating from './RatingStar';
@@ -19,13 +19,12 @@ interface Props {
 export default function NewArrival({ heading }: Props) {
     return (
         <div className="w-full flex justify-center overflow-hidden py-6">
-            <div className="w-full max-w-7xl">
+            <div className="w-[80%] sm:w-[80%] lg:w-[80%]">
                 <div>
                     <h1 className="text-center text-3xl sm:text-4xl md:text-5xl font-extrabold py-12">{heading}</h1>
                 </div>
-                <div className="w-full">
+                <div className="flex justify-center">
                     <Swiper
-                        className=""
                         slidesPerView={1}
                         spaceBetween={10}
                         pagination={{
@@ -33,8 +32,8 @@ export default function NewArrival({ heading }: Props) {
                         }}
                         breakpoints={{
                             640: {
-                                slidesPerView: 1,
-                                spaceBetween: 10,
+                                slidesPerView: 2,
+                                spaceBetween: 5,
                             },
                             768: {
                                 slidesPerView: 2,
@@ -49,18 +48,18 @@ export default function NewArrival({ heading }: Props) {
                                 spaceBetween: 20,
                             },
                         }}
-                        modules={[Pagination,Autoplay]}
+                        modules={[Pagination, Autoplay]}
                         autoplay={true}
 
                         style={{ paddingBottom: '50px' }}
+
                     >
                         {cardData.map((items, index) => {
                             const { image, productName, discountPrice, retailPrice, discount } = items;
 
                             return (
-                                <div key={index}>
-                                    <SwiperSlide className="">
-                                        <div className="flex flex-col gap-4 py-4 bg-white shadow-lg rounded-lg">
+                                    <SwiperSlide key={index}>
+                                        <div className="flex flex-col gap-4 py-4 shadow-lg rounded-lg items-center">
                                             <Image
                                                 src={image}
                                                 alt="product"
@@ -81,7 +80,6 @@ export default function NewArrival({ heading }: Props) {
                                             </p>
                                         </div>
                                     </SwiperSlide>
-                                </div>
                             );
                         })}
                     </Swiper>

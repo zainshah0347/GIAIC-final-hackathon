@@ -5,8 +5,8 @@ import Image from 'next/image';
 export default function Casual() {
     return (
         <div className='flex w-full justify-center'>
-            <div className='border-2 flex'>
-                <div className='w-[250px] h-full'>
+            <div className='border-2 flex w-[90%] sm:w-[80%] lg:w-[80%]'>
+                <div className='h-full'>
                     <Image
                         src={casual}
                         // width={250} 
