@@ -202,7 +202,7 @@ export default function Header() {
 
 
             {/* Main Header */}
-            <div className='w-full sm:w-[80%] flex sm:flex-row justify-between py-10 items-center border-b-2'>
+            <div className='w-full sm:w-[80%] flex sm:flex-row justify-between py-10 items-center'>
 
                 {/* Drawer for small screens */}
                 <LeftDrawer open={open} toggleDrawer={toggleDrawer}>
